@@ -1,2 +1,10 @@
-# git179
-going through github with bernd
+# Find A Doc
+
+## Description
+
+An application for helping people find an urgent care clinic in their local area
+
+## Git Commands
+
+
+## Deployment Service
