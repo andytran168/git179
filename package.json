@@ -1,0 +1,19 @@
+{
+  "name": "git179",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andytran168/git179.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andytran168/git179/issues"
+  },
+  "homepage": "https://github.com/andytran168/git179#readme"
+}
