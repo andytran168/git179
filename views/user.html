@@ -5,12 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Find A Doc</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="stylesheets/main.css" />
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-    <div data-role="page">
-        <p>Test Page</p>
+    <div data-role="page" id="profile" data-title="profile">
+        <div data-role="header">
+            <h1>My Profile</h1>
+            <a data-role="button" href="/" data-icon="home" data-corners="false">Home</a>
+        </div>
+        <div data-role="content">
+            <!-- Patient Photo -->
+            <img src="img/ph.png" alt="mee" />
+            
+            <!-- Patient Info -->
+            <div class="ui-body ui-body-d ui-textalign-left">
+                <!-- profile fields -->
+                <div class="tablerow">
+                    <div class="left-table">Name:</div>
+                    <div class="right-table">Jone Doe</div>
+                </div>
+                <div class="tablerow">
+                    <div class="left-table">Age:</div>
+                    <div class="right-table">25</div>
+                </div>
+                <div class="tablerow">
+                    <div class="left-table">Gender:</div>
+                    <div class="right-table">Female</div>
+                </div>
+                <div class="tablerow">
+                    <div class="left-table">Location:</div>
+                    <div class="right-table">Boston, MA, USA</div>
+                </div>
+            </div>
+
+            <!-- Insurance -->
+            <div data-role="collapsible" data-corners="false" class="ui-corner-none">
+                <h2 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-up-d" href="#" data-corners="false" data-shadow="false" data-iconshadow="true" data-icon="plus" data-iconpos="left" data-theme="d">
+                    <span class="ui-btn-text">Insurance Information</span>
+                </a></h2>
+                <div class="ui-body ui-body-d ui-textalign-left">
+                    <div class="tablerow">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer">
+            <p class="copyright">&copy; Copyright 2016</p>
+        </div>
     </div>
 </body>
 </html>

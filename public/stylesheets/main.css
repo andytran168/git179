@@ -1,0 +1,27 @@
+/* Map Styles */
+#map {
+width: 500px;
+height: 400px;
+margin: 0 auto;
+}
+
+/* Alignment Styles */
+.center {
+    margin: 0 auto;
+}
+
+/* table styles */
+.tablerow {
+    display: inline-block;
+    width: 100%;
+}
+.left-table {
+    text-align: right;
+    width: 25%; float: left;
+    padding-right: 2%;
+    font-weight: bold;
+}
+.right-table {
+    text-align: left;
+    width: 73%; float: left;
+}
