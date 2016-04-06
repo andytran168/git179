@@ -8,11 +8,13 @@ height: 400px;
 .center {
     margin: 0 auto;
 }
-.right {
-    float: right;
+#user-img {
+    display: block;
 }
-.left {
-    float: left;
+#user-img img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
 }
 
 /* table styles */
