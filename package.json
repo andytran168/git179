@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/andytran168/git179/issues"
   },
-  "homepage": "https://github.com/andytran168/git179#readme"
+  "homepage": "https://github.com/andytran168/git179#readme",
+  "dependencies": {
+    "jade": "^1.11.0",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "keywords": []
 }
