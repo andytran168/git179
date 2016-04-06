@@ -14,3 +14,4 @@ An application for helping people find an urgent care clinic in their local area
 * Go to localhost:5000 in browser of choice
 
 ## Deployment Service
+Deployed here : https://secret-beyond-68327.herokuapp.com/

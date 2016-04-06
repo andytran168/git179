@@ -2,12 +2,17 @@
 #map {
 width: 500px;
 height: 400px;
-margin: 0 auto;
 }
 
 /* Alignment Styles */
 .center {
     margin: 0 auto;
+}
+.right {
+    float: right;
+}
+.left {
+    float: left;
 }
 
 /* table styles */
