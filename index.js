@@ -25,6 +25,10 @@ app.get('/list', function(request, response) {
   response.render('list.jade');
 });
 
+app.get('/login', function(request, response) {
+  response.render('login.jade');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
