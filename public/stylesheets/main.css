@@ -32,3 +32,11 @@ height: 400px;
     text-align: left;
     width: 73%; float: left;
 }
+
+table {
+    border-collapse: collapse;
+}
+td {
+    padding: 0;
+    border: none;
+}
