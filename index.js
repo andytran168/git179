@@ -21,6 +21,18 @@ app.get('/clinic', function(request, response) {
   response.render('clinic.jade');
 });
 
+app.get('/clinic1', function(request, response) {
+  response.render('clinic1.jade');
+});
+
+app.get('/clinic2', function(request, response) {
+  response.render('clinic2.jade');
+});
+
+app.get('/clinic3', function(request, response) {
+  response.render('clinic3.jade');
+});
+
 app.get('/list', function(request, response) {
   response.render('list.jade');
 });
