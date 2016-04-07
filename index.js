@@ -13,6 +13,18 @@ app.get('/', function(request, response) {
   response.render('index.jade');
 });
 
+app.get('/home', function(request, response) {
+  response.render('home.jade');
+});
+
+app.get('/clinical/incoming', function(request, response) {
+  response.render('incomingpatients.jade');
+});
+
+app.get('/clinical/past', function(request, response) {
+  response.render('pastpatients.jade');
+});
+
 app.get('/user', function(request, response) {
   response.render('user.jade');
 });
