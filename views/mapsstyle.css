@@ -12,39 +12,39 @@
       }
       #listing {
         position: absolute;
-        width: 200px;
-        height: 470px;
+        width: 230px;
+        height: 580px;
         overflow: auto;
-        left: 442px;
+        left: 452px;
         top: 0px;
         cursor: pointer;
         overflow-x: hidden;
       }
       #findClinics {
         position: absolute;
-        text-align: right;
-        width: 100px;
-        font-size: 14px;
-        padding: 4px;
-        z-index: 5;
-        background-color: #fff;
+        text-align: left;
+        width: 200px;
+        font-size: 16px;
+        padding: 5px;
+        z-index: 6;
+        background-color: #b3d9ff;
       }
       #locationField {
         position: absolute;
-        width: 190px;
-        height: 25px;
-        left: 108px;
-        top: 0px;
-        z-index: 5;
-        background-color: #fff;
+        width: 270px;
+        height: 10px;
+        left: 118px;
+        top: 10px;
+        z-index: 6;
+        background-color: #b3d9ff;
       }
       #controls {
         position: absolute;
-        left: 300px;
-        width: 140px;
+        left: 220px;
+        width: 155px;
         top: 0px;
-        z-index: 5;
-        background-color: #fff;
+        z-index: 6;
+        background-color: #b3d9ff;
       }
       #autocomplete {
         width: 100%;
@@ -53,24 +53,24 @@
         width: 100%;
       }
       .placeIcon {
-        width: 20px;
-        height: 34px;
+        width: 32px;
+        height: 40px;
         margin: 4px;
       }
       .clinicIcon {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 40px;
       }
       #resultsTable {
         border-collapse: collapse;
-        width: 240px;
+        width: 300px;
       }
       #rating {
-        font-size: 13px;
-        font-family: Arial Unicode MS;
+        font-size: 18px;
+        font-family: Times;
       }
       .iw_table_row {
-        height: 18px;
+        height: 17px;
       }
       .iw_attribute_name {
         font-weight: bold;
