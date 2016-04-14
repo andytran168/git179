@@ -17,6 +17,10 @@ app.get('/home', function(request, response) {
   response.render('home.jade');
 });
 
+app.get('/home-after-login', function(request, response) {
+  response.render('home_after_login.jade');
+});
+
 app.get('/incomingpatients', function(request, response) {
   response.render('incomingpatients.jade');
 });
