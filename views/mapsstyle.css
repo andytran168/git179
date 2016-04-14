@@ -1,0 +1,82 @@
+<style>
+      html, body {
+        height: 90%;
+       
+      }
+      #map {
+        height: 100%;
+        width: 440px;
+      }
+      table {
+        font-size: 15px;
+      }
+      #listing {
+        position: absolute;
+        width: 230px;
+        height: 580px;
+        overflow: auto;
+        left: 452px;
+        top: 0px;
+        cursor: pointer;
+        overflow-x: hidden;
+      }
+      #findClinics {
+        position: absolute;
+        text-align: left;
+        width: 200px;
+        font-size: 16px;
+        padding: 5px;
+        z-index: 6;
+        background-color: #b3d9ff;
+      }
+      #locationField {
+        position: absolute;
+        width: 270px;
+        height: 10px;
+        left: 118px;
+        top: 10px;
+        z-index: 6;
+        background-color: #b3d9ff;
+      }
+      #controls {
+        position: absolute;
+        left: 220px;
+        width: 155px;
+        top: 0px;
+        z-index: 6;
+        background-color: #b3d9ff;
+      }
+      #autocomplete {
+        width: 100%;
+      }
+      #country {
+        width: 100%;
+      }
+      .placeIcon {
+        width: 32px;
+        height: 40px;
+        margin: 4px;
+      }
+      .clinicIcon {
+        width: 28px;
+        height: 40px;
+      }
+      #resultsTable {
+        border-collapse: collapse;
+        width: 300px;
+      }
+      #rating {
+        font-size: 18px;
+        font-family: Times;
+      }
+      .iw_table_row {
+        height: 17px;
+      }
+      .iw_attribute_name {
+        font-weight: bold;
+        text-align: right;
+      }
+      .iw_table_icon {
+        text-align: right;
+      }
+    </style>

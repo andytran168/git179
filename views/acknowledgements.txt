@@ -1,0 +1,4 @@
+Map Interface was derived from Google Maps Places API
+
+https://developers.google.com/places/web-service/search#Sensor
+https://developers.google.com/maps/documentation/javascript/
