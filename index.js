@@ -17,12 +17,24 @@ app.get('/home', function(request, response) {
   response.render('home.jade');
 });
 
-app.get('/clinical/incoming', function(request, response) {
+app.get('/home-after-login', function(request, response) {
+  response.render('home_after_login.jade');
+});
+
+app.get('/incomingpatients', function(request, response) {
   response.render('incomingpatients.jade');
 });
 
-app.get('/clinical/past', function(request, response) {
+app.get('/pastpatients', function(request, response) {
   response.render('pastpatients.jade');
+});
+
+app.get('/clinicreview', function(request, response) {
+  response.render('clinicreview.jade');
+});
+
+app.get('/patientinfo', function(request, response) {
+  response.render('patientinfo.jade');
 });
 
 app.get('/user', function(request, response) {
