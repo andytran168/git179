@@ -59,10 +59,7 @@
     </div>
 
     <script>
-
-      // This example uses the autocomplete feature of the Google Places API.
   
-
       // This code utilizes the Google API the Places library. 
       // <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places">
 
@@ -135,17 +132,17 @@
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
-            // Create a marker for each clinic found
+            // Make marker for each clinic
             for (var i = 0; i < results.length; i++) {
               var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
               var markerIcon = MARKER_PATH + markerLetter + '.png';
-              // Use marker animation to drop the icons incrementally on the map.
+              // Animate dropping the icons  on the map.
               markers[i] = new google.maps.Marker({
                 position: results[i].geometry.location,
                 animation: google.maps.Animation.DROP,
                 icon: markerIcon
               });
-              // If the user clicks a clinic marker, show the details of that clinic
+              // If user clicks a clinic marker, show the details of that clinic
               markers[i].placeResult = results[i];
               google.maps.event.addListener(markers[i], 'click', showInfoWindow);
               setTimeout(dropMarker(i), i * 100);
@@ -202,8 +199,7 @@
         }
       }
 
-      // Get the place details for a clinic. Show the information in an info window,
-      // anchored on the marker for the clinic that the user selected.
+      // Get the]details for a clinic. Show the information in an info window
       function showInfoWindow() {
         var marker = this;
         places.getDetails({placeId: marker.placeResult.place_id},
@@ -216,7 +212,7 @@
             });
       }
 
-      // Load the place information into the HTML elements used by the info window.
+      // put clinic information into the HTML elements used by the info window.
       function buildIWContent(place) {
         document.getElementById('iw-icon').innerHTML = '<img class="clinicIcon" ' +
             'src="' + place.icon + '"/>';
