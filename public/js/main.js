@@ -6,3 +6,4 @@ function initMap() {
     });
     marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(42.377,-71.1167)});
 }
+

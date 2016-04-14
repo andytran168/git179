@@ -2,3 +2,5 @@ Map Interface was derived from Google Maps Places API
 
 https://developers.google.com/places/web-service/search#Sensor
 https://developers.google.com/maps/documentation/javascript/
+
+Rating plug-in was derived from http://rateit.codeplex.com
