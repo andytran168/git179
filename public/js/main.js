@@ -29,6 +29,7 @@ map = new google.maps.Map(document.getElementById('map'), {
 
 infoWindow = new google.maps.InfoWindow({
     content: document.getElementById('info-content')
+
 });
 
 
@@ -156,10 +157,9 @@ function buildIWContent(place) {
     console.log(place);
 document.getElementById('iw-icon').innerHTML = '<img class="clinicIcon" ' +
     'src="' + place.icon + '"/>';
-document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
+document.getElementById('iw-url').innerHTML = '<b><a href="' + "/clinic" +
     '">' + place.name + '</a></b>';
 document.getElementById('iw-address').textContent = place.vicinity;
-
 if (place.formatted_phone_number) {
     document.getElementById('iw-phone-row').style.display = '';
     document.getElementById('iw-phone').textContent =
@@ -183,5 +183,7 @@ if (place.website) {
 } else {
     document.getElementById('iw-website-row').style.display = 'none';
 }
+document.getElementById('iw-review').innerHTML = '<a href=' + "/clinic3" +
+    '>' + "Review" + '</a>';
 }
 
