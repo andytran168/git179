@@ -1,1 +1,37 @@
-include home.html
+extends ./patient_layout.jade
+
+block content
+  div(data-role='header')
+    h1 Find A Doc
+    a(data-role='button', href='/', data-icon='back', data-corners='false') Back
+    a(data-role='button', href='/login', data-icon='user', data-corners='false') Login
+    
+  div(id='findClinics') Find Clinics in:
+  
+  div(id='locationField')
+    input(id='autocomplete', placeholder='Enter a city', type='text')
+    
+  div(id='map')
+  
+  div(id='listing')
+    table(id='resultsTable')
+      tbody(id='results')
+      
+  div(style='display: none')
+    div(id='info-content')
+      table
+        tr(id='iw-url-row', class='iw_table_row')
+          td(id='iw-icon' class='iw_table_icon')
+          td(id='iw-url')
+        tr(id='iw-address-row', class='iw_table_row')
+          td(class='iw_attribute_name') Address:
+          td(id='iw-address')
+        tr(id='iw-url-row', class='iw_table_row')
+          td(class='iw_attribute_name') Telephone:
+          td(id='iw-phone')
+        tr(id='iw-url-row', class='iw_table_row')
+          td(class='iw_attribute_name') Website:
+          td(id='iw-website')
+    
+  script(type='text/javascript', src='js/main.js')
+  script(async, defer, type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGex8CekhR6f7I6WFRuSFi6Mg8o7bJ2k&libraries=places&callback=initMap')
