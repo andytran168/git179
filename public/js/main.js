@@ -51,6 +51,29 @@ function initMap() {
   }
 }
 
+
+function initClinicMap(placeid) {
+  var mpa = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: {lat: 38.2, lng: -89.7},
+      mapTypeControl: false,
+      panControl: true,
+      zoomControl: false,
+      streetViewControl: false
+    });
+  var request = {
+    placeId: placeid
+  };
+  var service = new google.maps.places.PlacesService(mpa);
+  service.getDetails(request, getPlaceInfo);
+}
+
+function getPlaceInfo(place, status) {
+  if(status == google.maps.places.PlacesServiceStatus.OK) {
+    console.log(place);
+  }
+}
+
 // When the user selects a city, get the place details for the city and
 // zoom the map in on the city.
 function onPlaceChanged() {
@@ -97,96 +120,103 @@ places.nearbySearch(search, function(results, status) {
 }
 
 function clearMarkers() {
-for (var i = 0; i < markers.length; i++) {
-    if (markers[i]) {
-    markers[i].setMap(null);
-    }
-}
-markers = [];
+  for (var i = 0; i < markers.length; i++) {
+      if (markers[i]) {
+      markers[i].setMap(null);
+      }
+  }
+  markers = [];
 }
 
 function dropMarker(i) {
-return function() {
-    markers[i].setMap(map);
-};
+  return function() {
+      markers[i].setMap(map);
+  };
 }
 
 function addResult(result, i) {
-var results = document.getElementById('results');
-var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
-var markerIcon = MARKER_PATH + markerLetter + '.png';
+  var results = document.getElementById('results');
+  var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
+  var markerIcon = MARKER_PATH + markerLetter + '.png';
 
-var tr = document.createElement('tr');
-tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
-tr.onclick = function() {
-    google.maps.event.trigger(markers[i], 'click');
-};
+  var tr = document.createElement('tr');
+  tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+  tr.onclick = function() {
+      google.maps.event.trigger(markers[i], 'click');
+  };
 
-var iconTd = document.createElement('td');
-var nameTd = document.createElement('td');
-var icon = document.createElement('img');
-icon.src = markerIcon;
-icon.setAttribute('class', 'placeIcon');
-icon.setAttribute('className', 'placeIcon');
-var name = document.createTextNode(result.name);
-iconTd.appendChild(icon);
-nameTd.appendChild(name);
-tr.appendChild(iconTd);
-tr.appendChild(nameTd);
-results.appendChild(tr);
+  var iconTd = document.createElement('td');
+  var nameTd = document.createElement('td');
+  var icon = document.createElement('img');
+  icon.src = markerIcon;
+  icon.setAttribute('class', 'placeIcon');
+  icon.setAttribute('className', 'placeIcon');
+  var name = document.createTextNode(result.name);
+  iconTd.appendChild(icon);
+  nameTd.appendChild(name);
+  tr.appendChild(iconTd);
+  tr.appendChild(nameTd);
+  results.appendChild(tr);
 }
 
 function clearResults() {
-var results = document.getElementById('results');
-while (results.childNodes[0]) {
-    results.removeChild(results.childNodes[0]);
-}
+  var results = document.getElementById('results');
+  while (results.childNodes[0]) {
+      results.removeChild(results.childNodes[0]);
+  }
 }
 
 // Get the]details for a clinic. Show the information in an info window
 function showInfoWindow() {
-var marker = this;
-places.getDetails({placeId: marker.placeResult.place_id},
-    function(place, status) {
-        if (status !== google.maps.places.PlacesServiceStatus.OK) {
-        return;
-        }
-        infoWindow.open(map, marker);
-        buildIWContent(place);
-    });
+  var marker = this;
+  places.getDetails({placeId: marker.placeResult.place_id},
+      function(place, status) {
+          if (status !== google.maps.places.PlacesServiceStatus.OK) {
+          return;
+          }
+          infoWindow.open(map, marker);
+          buildIWContent(place);
+      });
 }
 
 // put clinic information into the HTML elements used by the info window.
 function buildIWContent(place) {
-    console.log(place);
-document.getElementById('iw-icon').innerHTML = '<img class="clinicIcon" ' +
-    'src="' + place.icon + '"/>';
-document.getElementById('iw-url').innerHTML = '<b><a href="' + "/clinic" +
-    '">' + place.name + '</a></b>';
-document.getElementById('iw-address').textContent = place.vicinity;
-if (place.formatted_phone_number) {
-    document.getElementById('iw-phone-row').style.display = '';
-    document.getElementById('iw-phone').textContent =
-        place.formatted_phone_number;
-} else {
-    document.getElementById('iw-phone-row').style.display = 'none';
+  sessionStorage.setItem('clinic', JSON.stringify(place));
+  document.getElementById('iw-icon').innerHTML = '<img class="clinicIcon" ' +
+      'src="' + place.icon + '"/>';
+  document.getElementById('iw-url').innerHTML = '<b><a href="' + "/clinic" +
+      '">' + place.name + '</a></b>';
+  document.getElementById('iw-address').textContent = place.vicinity;
+  if (place.formatted_phone_number) {
+      document.getElementById('iw-phone-row').style.display = '';
+      document.getElementById('iw-phone').textContent =
+          place.formatted_phone_number;
+  } else {
+      document.getElementById('iw-phone-row').style.display = 'none';
+  }
+
+  // The regexp isolates the first part of the URL (domain plus subdomain)
+  // to give a short URL for displaying in the info window.
+  if (place.website) {
+      var fullUrl = place.website;
+      var website = hostnameRegexp.exec(place.website);
+      if (website === null) {
+      website = 'http://' + place.website + '/';
+      fullUrl = website;
+      }
+      document.getElementById('iw-website-row').style.display = '';
+      document.getElementById('iw-website').textContent = website;
+  } else {
+      document.getElementById('iw-website-row').style.display = 'none';
+  }
+  /*document.getElementById('iw-review').innerHTML = '<a href=' + "/clinic3" +
+      '>' + "Review" + '</a>';*/
 }
 
-
-// The regexp isolates the first part of the URL (domain plus subdomain)
-// to give a short URL for displaying in the info window.
-if (place.website) {
-    var fullUrl = place.website;
-    var website = hostnameRegexp.exec(place.website);
-    if (website === null) {
-    website = 'http://' + place.website + '/';
-    fullUrl = website;
-    }
-    document.getElementById('iw-website-row').style.display = '';
-    document.getElementById('iw-website').textContent = website;
-} else {
-    document.getElementById('iw-website-row').style.display = 'none';
-}
-document.getElementById('iw-review').innerHTML = '<a href=' + "/clinic3" +
-    '>' + "Review" + '</a>';
+function populateClinicPage() {
+  var clinic = JSON.parse(sessionStorage.getItem('clinic'));
+  document.getElementById('clinicName').innerText = clinic.name;
+  document.getElementById('clinicInfo').innerHTML = "<p>" + clinic.name + "</p>" +
+  "<p>" + clinic.formatted_address + "</p>" + "<p>" + clinic.formatted_phone_number +
+  "</p>" + "<p>" + clinic.website + "</p>";
 }

@@ -2,20 +2,40 @@ extends patient_layout
 
 block content
   div(data-role='header')
-    h1 !{clinic.name}
-    a (data-role="button", href="/home", data-icon="home", data-corners="false") Home
-    a (data-role="button" href="/user", data-icon="user", data-corners="false") Profile
+    h1(id='clinicName')
+    a(data-role="button", href="/home", data-icon="home", data-corners="false") Home
+    a(data-role="button", href="/user", data-icon="user", data-corners="false") Profile
   
   div(data-role='navbar')
     ul
       li: a(href='/clinic1') Patient Services
       li: a(href='/clinic2') Insurances Accepted
       li: a(href='/clinic3') Reviews
-  p !{clinic.formatted_address}
+  div(id='clinicInfo')
   div(id='map', class='center')
   
+  table
+    tr
+      th Hours
+    tr
+      td Monday
+      td 8:00 am - 8:00 pm
+    tr
+      td Tuesday
+      td 8:00 am - 8:00 pm
+    tr
+      td Wednesday
+      td 8:00 am - 8:00 pm
+    tr
+      td Thursday
+      td 8:00 am - 10:00 pm
+    tr
+      td Saturday
+      td 8:00 am - 10:00 pm
+    tr
+      td Sunday
+      td 8:00 am - 4:00 pm
+      
 block after-scripts
   script(type='text/javascript', src='js/main.js')
-  script(async, defer, type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGex8CekhR6f7I6WFRuSFi6Mg8o7bJ2k&callback=initMap')
-
-    
+  script populateClinicPage()
