@@ -1,4 +1,4 @@
-extends ./patient_layout.jade
+extends patient_layout
 
 block content
   div(data-role='header')
@@ -11,7 +11,7 @@ block content
   div(id='locationField')
     input(id='autocomplete', placeholder='Enter a city', type='text')
     
-  div(id='map')
+  div(id='map',class='center')
   
   div(id='listing')
     table(id='resultsTable')
@@ -26,12 +26,15 @@ block content
         tr(id='iw-address-row', class='iw_table_row')
           td(class='iw_attribute_name') Address:
           td(id='iw-address')
-        tr(id='iw-url-row', class='iw_table_row')
+        tr(id='iw-phone-row', class='iw_table_row')
           td(class='iw_attribute_name') Telephone:
           td(id='iw-phone')
-        tr(id='iw-url-row', class='iw_table_row')
+        tr(id='iw-website-row', class='iw_table_row')
           td(class='iw_attribute_name') Website:
           td(id='iw-website')
-    
+
+block after-scripts
+  
   script(type='text/javascript', src='js/main.js')
+  script
   script(async, defer, type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGex8CekhR6f7I6WFRuSFi6Mg8o7bJ2k&libraries=places&callback=initMap')

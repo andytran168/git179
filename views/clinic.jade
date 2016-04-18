@@ -1,1 +1,21 @@
-include clinic.html
+extends patient_layout
+
+block content
+  div(data-role='header')
+    h1 !{clinic.name}
+    a (data-role="button", href="/home", data-icon="home", data-corners="false") Home
+    a (data-role="button" href="/user", data-icon="user", data-corners="false") Profile
+  
+  div(data-role='navbar')
+    ul
+      li: a(href='/clinic1') Patient Services
+      li: a(href='/clinic2') Insurances Accepted
+      li: a(href='/clinic3') Reviews
+  p !{clinic.formatted_address}
+  div(id='map', class='center')
+  
+block after-scripts
+  script(type='text/javascript', src='js/main.js')
+  script(async, defer, type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGex8CekhR6f7I6WFRuSFi6Mg8o7bJ2k&callback=initMap')
+
+    

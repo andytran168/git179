@@ -1,4 +1,4 @@
-// This code utilizes the Google API the Places library. 
+// This code utilizes the Google API the Places library.
 // <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places">
 
 var map, places, infoWindow;
@@ -8,47 +8,54 @@ var autocomplete;
 var countryRestrict = {'country': 'us'};
 var MARKER_PATH = 'https://maps.gstatic.com/intl/en_us/mapfiles/marker_green';
 var hostnameRegexp = new RegExp('^https?://.+?/');
+var mapPosition = {};
 
 var countries = {
 'us': {
     center: {lat: 38.2, lng: -89.7},
     zoom: 4
 }
-
 };
 
-function initMap() {
-map = new google.maps.Map(document.getElementById('map'), {
-    zoom: countries['us'].zoom,
-    center: countries['us'].center,
-    mapTypeControl: false,
-    panControl: false,
-    zoomControl: false,
-    streetViewControl: false
-});
-
-infoWindow = new google.maps.InfoWindow({
-    content: document.getElementById('info-content')
-
-});
-
-
-autocomplete = new google.maps.places.Autocomplete(
-                (
-        document.getElementById('autocomplete')), {
-        types: ['(cities)'],
-        componentRestrictions: countryRestrict
+function showPostion(pos) {
+  map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: {lat: pos.coords.latitude, lng: pos.coords.longitude},
+      mapTypeControl: false,
+      panControl: true,
+      zoomControl: false,
+      streetViewControl: false
     });
+  infoWindow = new google.maps.InfoWindow({
+      content: document.getElementById('info-content')
 
-places = new google.maps.places.PlacesService(map);
+  });
 
-autocomplete.addListener('place_changed', onPlaceChanged);
+  autocomplete = new google.maps.places.Autocomplete(
+                  (
+          document.getElementById('autocomplete')), {
+          types: ['(cities)'],
+          componentRestrictions: countryRestrict
+      });
+
+  places = new google.maps.places.PlacesService(map);
+
+  autocomplete.addListener('place_changed', onPlaceChanged);
+}
+
+function initMap() {
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPostion);
+  } else {
+    console.log("Unable to get location from device");
+  }
 }
 
 // When the user selects a city, get the place details for the city and
 // zoom the map in on the city.
 function onPlaceChanged() {
 var place = autocomplete.getPlace();
+console.log(place);
 if (place.geometry) {
     map.panTo(place.geometry.location);
     map.setZoom(15);
@@ -63,10 +70,7 @@ function search() {
 var search = {
     bounds: map.getBounds(),
     types: ['hospital']
-    
-
 };
-
 
 places.nearbySearch(search, function(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -186,4 +190,3 @@ if (place.website) {
 document.getElementById('iw-review').innerHTML = '<a href=' + "/clinic3" +
     '>' + "Review" + '</a>';
 }
-
