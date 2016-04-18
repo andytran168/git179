@@ -216,7 +216,8 @@ function buildIWContent(place) {
 function populateClinicPage() {
   var clinic = JSON.parse(sessionStorage.getItem('clinic'));
   document.getElementById('clinicName').innerText = clinic.name;
-  document.getElementById('clinicInfo').innerHTML = "<p>" + clinic.name + "</p>" +
-  "<p>" + clinic.formatted_address + "</p>" + "<p>" + clinic.formatted_phone_number +
-  "</p>" + "<p>" + clinic.website + "</p>";
+  if(document.getElementById('clinicInfo')) {
+    document.getElementById('clinicInfo').innerHTML = "<p>" + clinic.name + "</br>" + clinic.formatted_address + "</br>" + clinic.formatted_phone_number +
+    "</br>" + clinic.website + "</p>";
+  }
 }

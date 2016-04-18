@@ -1,0 +1,22 @@
+extends patient_layout
+
+block header
+  div(data-role='header')
+    h1(id='clinicName')
+    a(data-role="button", href="/home", data-icon="home", data-corners="false") Home
+    a(data-role="button", href="/user", data-icon="user", data-corners="false") Profile
+  
+  div(data-role='navbar')
+    ul
+      li: a(href='/clinic1') Patient Services
+      li: a(href='/clinic2') Insurances Accepted
+      li: a(href='/clinic3') Reviews
+  
+block content
+
+block after-scripts
+  script(type='text/javascript', src='js/main.js')
+  
+block prepend footer
+  a(data-role="button", data-icon="phone", data-inline="true") Call
+  a(data-role="button", data-icon="phone", data-inline="true", href="/") Uber

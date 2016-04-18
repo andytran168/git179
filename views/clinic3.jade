@@ -1,1 +1,53 @@
-include clinic3.html
+extends clinic
+
+block scripts
+  link(rel="stylesheet", type="text/css", href="js/scripts/rateit.css")
+  script(src="js/scripts/jquery.rateit.js")
+  
+block content
+  table
+    tr
+      th March 17, 2016
+      th Overall Rating
+      th Wait Time
+    tr
+      td by a Verified Patient
+      td ★★★★★
+      td ★★★★★
+    tr
+      td
+      td(colspan="2") Excellent care. Will come again.
+    
+  table
+    tr
+      th March 14, 2016
+      th Overall Rating
+      th Wait Time
+    tr
+      td by a Verified Patient
+      td ★★★★★
+      td ★★★
+    tr
+      td
+      td(colspan="2") Compassionate staff. I love it!
+      
+block prepend footer
+  div
+    a(href="#pre-rendered", aria-owns="pre-rendered", ariahaspopup="true", aria-expanded="false", data-rel="popup", data-icon="star", data-inline="true")
+      | Write a Review
+    div(id="pre-rendered-screen", class="ui-popup-screen ui-screen-hidden")
+
+    div(id="pre-rendered-popup", class="ui-popup-container fade ui-popup-hidden ui-body-inherit ui-overlay-shadow ui-corner-all")
+      div(id="pre-rendered", class="ui-popup", data-role="popup", data-enhanced="true", data-transition="fade")
+        div(class="ui-field-contain")
+         div(data-role="header")
+           h1 Post Review
+           a(data-role="button", href="/clinic3", data-corners="false") Close
+           a(data-role="button", href="/clinic3", data-corners="false") Post
+              
+           label Overall Rating
+           div(class="rateit")
+           label Wait Time
+           div(class="rateit")
+           textarea(cols="40", rows="8", name="textarea-1")
+    
