@@ -1,11 +1,7 @@
 extends patient_layout
 
 block content
-  div(data-role='header')
-    h1 Find A Doc
-    a(data-role='button', href='/', data-icon='back', data-corners='false') Back
-    a(data-role='button', href='/login', data-icon='user', data-corners='false') Login
-    
+
   div(id='findClinics') Find Clinics in:
   
   div(id='locationField')
@@ -34,6 +30,6 @@ block content
           td(id='iw-website')
 
 block after-scripts
-  
   script(type='text/javascript', src='js/main.js')
   script(async, defer, type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGex8CekhR6f7I6WFRuSFi6Mg8o7bJ2k&libraries=places&callback=initMap')
+  script populatePageHeader()
