@@ -214,8 +214,10 @@ function buildIWContent(place) {
 }
 
 function populateClinicPage() {
+  populatePageHeader();
+  document.getElementById('nav-button').href="/home";
   var clinic = JSON.parse(sessionStorage.getItem('clinic'));
-  document.getElementById('clinicName').innerText = clinic.name;
+  document.getElementById('header').innerText = clinic.name;
   if(document.getElementById('clinicInfo')) {
     document.getElementById('clinicInfo').innerHTML = "<p>" + clinic.name + "</br>" + clinic.formatted_address + "</br>" + clinic.formatted_phone_number +
     "</br>" + clinic.website + "</p>";
@@ -238,3 +240,21 @@ function initClinicMap1 () {
     map: map
   });
   }
+
+function populatePageHeader() {
+  if(sessionStorage.getItem('user')) {
+    document.getElementById('login-button').innerText = "Profile";
+    document.getElementById('login-button').href = "/user";
+  }
+}
+
+function saveUser() {
+  var user = {};
+  user.first = document.getElementById('first').value;
+  user.last = document.getElementById('last').value;
+  user.insurance = document.getElementById('insurance').value;
+  user.username = document.getElementById('username').value;
+  sessionStorage.setItem("user", JSON.stringify(user));
+  window.location= "http://" + document.location.host + "/home";
+}
+

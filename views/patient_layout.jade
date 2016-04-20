@@ -15,6 +15,10 @@ html
     div(data-role='page')
       div(data-role='content')
         block header
+          div(data-role='header')
+            h1(id='header') Find A Doc
+            a(id='nav-button', data-role='button', href='/', data-icon='back', data-corners='false') Back
+            a(id='login-button', data-role='button', href='/login', data-icon='user', data-corners='false') Sign Up
         block content
         block footer
           div(data-role='footer')

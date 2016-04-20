@@ -1,1 +1,25 @@
-include login.html
+extend patient_layout
+
+block header
+  h1 Find A Doc
+  a(data-role="button", href="/home", data-icon="home", data-corners="false") Home
+  block scripts
+    script(type='text/javascript', src='js/main.js')
+    
+block content
+  form(id="userform",action="javascript:saveUser()")
+    label(for="first") First Name:
+    input(type="text", name="first", id="first")
+    label(for="last") Last Name:
+    input(type="text", name="last", id="last")
+    label(for="insurance") Insurance:
+    input(list="ilist", name="insurance", id="insurance")
+    datalist(id="ilist")
+      each item in ["Aetna", "Blue Cross Blue Shield of Massachusetts", "Blue Cross Blue Shield of Rhode Island", "Cigna", "ConnectiCare, Inc.", "ConnectiCare of Massachusetts", "Consolidated Health Plans PPO", "Fallon Community Health Plan (FCHP)", "Harvard Pilgrim Health Care, Inc.", "Health New England", "MassHealth", "Neighborhood Health Plan", "Network Health", "Tufts Associated Health Plans, Inc.", "UnitedHealthCare"]
+        option(value=item)
+
+    label(for="username") User Name:
+    input(type="text", id="username", name="username", value="")
+    label(for="password") Password:
+    input(type="password", name="password", value="")
+    input(type="submit", value="Signup")

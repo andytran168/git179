@@ -26,5 +26,10 @@ block content
       td 8:00 am - 4:00 pm
       
 block append after-scripts
+
   script(async, defer, type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGex8CekhR6f7I6WFRuSFi6Mg8o7bJ2k&libraries=places&callback=populateClinicPage')
   script(async, defer, type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGex8CekhR6f7I6WFRuSFi6Mg8o7bJ2k&libraries=places&callback=initClinicMap1')
+
+  //- script(async, defer, type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGex8CekhR6f7I6WFRuSFi6Mg8o7bJ2k&libraries=places&callback=populateClinicPage')
+  script $(populateClinicPage())
+
