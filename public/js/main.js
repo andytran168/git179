@@ -55,7 +55,7 @@ function initMap() {
 function initClinicMap(placeid) {
   var mpa = new google.maps.Map(document.getElementById('map'), {
       zoom: 15,
-      center: {lat: 38.2, lng: -89.7},
+      center: {lat: 41.2, lng: -89.7},
       mapTypeControl: false,
       panControl: true,
       zoomControl: false,
@@ -221,3 +221,20 @@ function populateClinicPage() {
     "</br>" + clinic.website + "</p>";
   }
 }
+
+function initClinicMap1 () {
+  var clinic = JSON.parse(sessionStorage.getItem('clinic'));
+  var myLatLng = {lat: clinic.geometry.location.lat, lng: clinic.geometry.location.lng};
+  var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: myLatLng,
+      mapTypeControl: false,
+      panControl: true,
+      zoomControl: true,
+      streetViewControl: false
+    });
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map
+  });
+  }
