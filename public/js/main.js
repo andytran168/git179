@@ -258,3 +258,13 @@ function saveUser() {
   window.location= "http://" + document.location.host + "/home";
 }
 
+
+
+$(document).ready(function () {
+  $("#post").click(function(){
+        $("#reviewTable").append("<tr><th>April 22, 2016</th><th>Overall Rating</th></tr><tr><td>by a Verified Patient</td><td>★★★★★</td></tr><tr><td></td><td colspan='2'>" + 'AWESOME CLINIC' + "</td></tr>");
+    });
+});
+
+
+
