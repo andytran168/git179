@@ -13,6 +13,14 @@ block content
     input(type="text", name="first", id="first")
     label(for="last") Last Name:
     input(type="text", name="last", id="last")
+    label(for="age") Age:
+    input(type="number", name="age", id="age")
+    label(for="gender")
+    select(name="gender")
+      option(value=" ") EMPTY
+      option(value="Male") Male
+      option(value="Female") Female
+
     label(for="insurance") Insurance:
     input(list="ilist", name="insurance", id="insurance")
     datalist(id="ilist")
