@@ -26,7 +26,9 @@ block content
       td
       td(colspan="2") Compassionate staff. I love it!
 
-  
+block append after-scripts
+    script $(document).ready(loadReviews());
+    
 block prepend footer
     a(href="#reviewPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left") Write a Review
     div(data-role="popup" id="reviewPopup" class="ui-content" style="min-width:250px;")
@@ -39,7 +41,3 @@ block prepend footer
           label(for="review" class="ui-hidden-accessible") 
           input(type="text" name="rate" id="review" placeholder="Write review here")
           input(type="submit",id="post", value="Post") 
-
-
-
-
