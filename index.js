@@ -57,10 +57,6 @@ app.get('/clinic3', function(request, response) {
   response.render('clinic3.jade');
 });
 
-app.get('/list', function(request, response) {
-  response.render('list.jade');
-});
-
 app.get('/login', function(request, response) {
   response.render('login.jade');
 });
