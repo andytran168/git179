@@ -30,12 +30,11 @@ block content
           td(id='iw-website')
         tr(id='iw-call-row', class='iw_call_row')
           a(href='http://ibuildapp.com/images/features/screenshots/tap-to-call-2.png')
-            img(src='callicon.png', style='width:50px;height:50px;')
+            img(src='img/callicon.png', style='width:50px;height:50px;')
         tr(id='iw-uber-row', class='iw_uber_row')
           a(href='https://s-media-cache-ak0.pinimg.com/564x/8b/90/56/8b9056eadc3b968e0733f008a23aa64d.jpg')
-            img(src='uber.jpg', style='width:50px;height:50px;')
+            img(src='img/uber.jpg', style='width:50px;height:50px;')
 
-block after-scripts
-  script(type='text/javascript', src='js/main.js')
+block append after-scripts
+  script(type='text/javascript', src='js/home.js')
   script(async, defer, type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGex8CekhR6f7I6WFRuSFi6Mg8o7bJ2k&libraries=places&callback=initMap')
-  script populatePageHeader()

@@ -3,7 +3,7 @@ extends patient_layout
 block header
   div(data-role='header')
     h1(id='header') Find A Doc
-    a(id='nav-button', data-role='button', href='/clinic', data-icon='back', data-corners='false') Back
+    a(id='nav-button', data-role='button', href='/clinic', data-icon='back', data-corners='false', data-ajax='false') Back
     a(id='login-button', data-role='button', href='/login', data-icon='user', data-corners='false') Sign Up
   div(data-role='navbar')
     ul
@@ -12,9 +12,6 @@ block header
       li: a(href='/clinic3') Reviews
   
 block content
-
-block after-scripts
-  script(type='text/javascript', src='js/main.js')
   
 block prepend footer
   a(data-role="button", data-icon="phone", data-inline="true", href="http://ibuildapp.com/images/features/screenshots/tap-to-call-2.png") Call

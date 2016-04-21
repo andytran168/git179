@@ -41,4 +41,17 @@ td {
     border: none;
 }
 
+textarea {
+    background: rgba(0, 0, 0, 0);  
+    resize: none;
+    padding: 3px;
+    border-style: none;
+}
+
+.review {
+    font-size: 85%;
+    height: 10px;
+    width: 70%;
+    color: black;
+}
 
