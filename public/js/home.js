@@ -19,11 +19,45 @@ function showPostion(pos) {
       zoomControl: false,
       streetViewControl: false
     });
+
   infoWindow = new google.maps.InfoWindow({
       content: document.getElementById('info-content')
 
   });
+  var Cambridge = new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude)
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch({
+    location: Cambridge,
+    radius: 1000,
+    type: ['hospital']
+  }, callback);
 
+
+function callback(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+
+    clearResults();
+    clearMarkers();
+    // Make marker for each clinic
+    for (var i = 0; i < results.length; i++) {
+        var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
+        var markerIcon = MARKER_PATH + markerLetter + '.png';
+        // Animate dropping the icons  on the map.
+        markers[i] = new google.maps.Marker({
+        position: results[i].geometry.location,
+        animation: google.maps.Animation.DROP,
+        icon: markerIcon
+        });
+        // If user clicks a clinic marker, show the details of that clinic
+        markers[i].placeResult = results[i];
+        google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+        setTimeout(dropMarker(i), i * 100);
+        addResult(results[i], i);
+    }
+    }
+  }
+}
   autocomplete = new google.maps.places.Autocomplete(
                   (
           document.getElementById('autocomplete')), {
