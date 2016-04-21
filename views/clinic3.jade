@@ -30,12 +30,16 @@ block content
 block prepend footer
     a(href="#reviewPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left") Write a Review
     div(data-role="popup" id="reviewPopup" class="ui-content" style="min-width:250px;")
+      form(method="post" action="javascript:reviewClinic()")
         div(data-role="header")
           h3 Post Review
           a(data-role="button", href="/clinic3", data-corners="false") Close
-          div(class="rateit")    
-          textarea(class="review" placeholder="Write review here")
-          button(id="post" data-corners="false" ) Post
+          label(for="rating" class="ui-hidden-accessible") 
+          input(type="range" name="rate" id="rating" min="1" max="5" step="1")
+          label(for="review" class="ui-hidden-accessible") 
+          input(type="text" name="rate" id="review" placeholder="Write review here")
+          input(type="submit",id="post", value="Post") 
+
 
 
 

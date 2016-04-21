@@ -297,14 +297,17 @@ function saveUser() {
 
 
 
-$(document).ready(function () {
-  $("#post").click(function(){
-        $("#reviewTable").append("<tr><th>April 22, 2016</th><th>Overall Rating</th></tr><tr><td>by a Verified Patient</td><td>★★★★★</td></tr><tr><td></td><td colspan='2'>" + 'AWESOME CLINIC' + "</td></tr>");
+
+
+function reviewClinic() {
+    var rev = {};
+    rev.rating = document.getElementById('rating').value;
+    rev.review = document.getElementById('review').value;
+    sessionStorage.setItem('review', JSON.stringify(rev));
+    $("#post").click(function(){
+        $("#reviewTable").append("<tr><th>April 22, 2016</th><th>Overall Rating</th></tr><tr><td>by a Verified Patient</td><td>" + rev.rating +"</td></tr><tr><td></td><td colspan='2'>" + rev.review + "</td></tr>");
     });
-});
-
-
-
+}
 
 function populatePageHeader() {
   if(sessionStorage.getItem('user')) {
