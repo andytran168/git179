@@ -2,17 +2,18 @@ extends patient_layout
 
 block header
   div(data-role='header')
-    h1(id='header') Find A Doc
-    a(id='nav-button', data-role='button', href='/clinic', data-icon='back', data-corners='false', data-ajax='false') Back
-    a(id='login-button', data-role='button', href='/login', data-icon='user', data-corners='false', data-ajax='false') Sign Up
+    h1(id='header') Find A D
+    a(id='nav-button', data-role='button', href='/clinic', data-icon='back', data-corners='false', data-ajax='false') asdf
+    a(id='login-button', data-role='button', href='/login', data-icon='user', data-corners='false', data-ajax='false') A
   div(data-role='navbar')
     ul
-      li: a(href='/clinic1', data-ajax='false') Patient Services
-      li: a(href='/clinic2', data-ajax='false') Insurances Accepted
+      li: a(href='/clinic1', data-ajax='false') Patient 
+      li: a(href='/clinic2', data-ajax='false') Insurances
       li: a(href='/clinic3', data-ajax='false') Reviews
   
 block content
   
-block prepend footer
-  a(data-role="button", data-icon="phone", data-inline="true", href="http://ibuildapp.com/images/features/screenshots/tap-to-call-2.png", data-ajax='false') Call
-  a(data-role="button", data-icon="navigation", data-inline="true", href="https://s-media-cache-ak0.pinimg.com/564x/8b/90/56/8b9056eadc3b968e0733f008a23aa64d.jpg", data-ajax='false') Uber
+block footer
+  div(data-role=‘footer’)
+    a(data-role="button", data-icon="phone", data-inline="true", href="http://ibuildapp.com/images/features/screenshots/tap-to-call-2.png", data-ajax='false') Call
+    a(data-role="button", data-icon="navigation", data-inline="true", href="https://s-media-cache-ak0.pinimg.com/564x/8b/90/56/8b9056eadc3b968e0733f008a23aa64d.jpg", data-ajax='false') Uber

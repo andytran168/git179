@@ -1,8 +1,34 @@
-@import url("style.css");
+//import url("style.css");
 
 .ui-page{
 	background:#E7E7E7;
 	
+}
+
+
+.ui-header h1{
+	color:#fff;
+	text-shadow:none;
+}
+
+#findClinics{
+color:#ff;
+font-size:12px;
+text-shadow:none;
+text-emphasis:none;
+text-decoration:none;
+font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+padding-top:20px;
+}
+
+#reviewTable{
+color:#ff;
+font-size:12px;
+text-shadow:none;
+text-emphasis:none;
+text-decoration:none;
+font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+margin:20px;
 }
 
 .ui-header  { 
@@ -26,31 +52,65 @@ text-decoration:none;
 font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
 }
 
-.ui-btn:hover {
-	background:#7cdac8 !important;
-	color:#fff !important;
-	text-shadow:none !important;
-	
-}
 
-.ui-header .ui-btn{
-	
+
+#nav-button{
 	position:absolute;
 	background:none !important;
 	border:0px;
 	box-shadow:none;
 	margin:0px;
 	padding:0px;
+	font-size:24px;
+	text-shadow:none;
+	color:#3bc0a7;
 }
 
-.ui-header span{
+#clinichome-button{
+	width:38px;
+	position:absolute;
+	background:none !important;
+	border:0px;
+	box-shadow:none;
+	margin:0px;
+	padding:0px;
+	font-size:24px;
 	text-shadow:none;
-	font-size:32px;
-	color:#fff;
+	color:#3bc0a7;
 }
+
+
+.ui-header .ui-btn{
+	position:absolute;
+	background:none !important;
+	border:0px;
+	box-shadow:none;
+	margin:0px;
+	padding:0px;
+	font-size:24px;
+	text-shadow:none;
+	color:#3bc0a7;
+	
+}
+
+#login-button{
+	width:38px;
+	position:absolute;
+	background:none !important;
+	border:0px;
+	box-shadow:none;
+	margin:0px;
+	padding:0px;
+	font-size:24px;
+	text-shadow:none;
+	color:#3bc0a7;
+}
+
+
+
+
 
 p {
-
 color:#ff;
 font-size:12px;
 text-shadow:none;
@@ -81,17 +141,13 @@ padding-right:1px;
 
 .ui-footer .ui-btn{
 	border-color:#FFFFFF !important;
-	background:none !important;
+	background:#3bc0a7 !important;
 	box-shadow:none;
 	text-shadow:none !important;
 	width:73px !important;
 }
 
-.ui-footer .ui-btn:hover{
-	background:#7cdac8 !important;
-	color:#fff !important;
-	text-shadow:none !important;
-}
+
 	
 
 
