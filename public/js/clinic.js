@@ -33,6 +33,17 @@ function reviewClinic() {
     var rev = {};
     rev.rating = document.getElementById('rating').value;
     rev.review = document.getElementById('review').value;
+    if (rev.rating == 1) {
+    rev.rating = "★";
+} else if (rev.rating == 2) {
+    rev.rating = "★★";
+} else if (rev.rating == 3) {
+    rev.rating = "★★★";
+}else if (rev.rating == 4) {
+    rev.rating = "★★★★";
+}else if (rev.rating == 5) {
+    rev.rating = "★★★★★";
+};
     sessionStorage.setItem('review', JSON.stringify(rev));
     $("#post").click(function(){
         $("#reviewTable").append("<tr><th>April 22, 2016</th><th>Overall Rating</th></tr><tr><td>by a Verified Patient</td><td>" + rev.rating +"</td></tr><tr><td></td><td colspan='2'>" + rev.review + "</td></tr>");
