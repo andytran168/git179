@@ -1,3 +1,102 @@
+@import url("style.css");
+
+.ui-page{
+	background:#E7E7E7;
+	
+}
+
+.ui-header  { 
+color:#ffffff;
+text-shadow:none;
+text-emphasis:none;
+font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+font-size: 16px;
+font-weight
+line-height: 20px; 
+margin:  0px 0px !important;
+background:#3bc0a7 !important;
+border:none;
+}
+
+.ui-btn {
+color:#ffffff;
+text-shadow:none;
+text-emphasis:none;
+text-decoration:none;
+font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+}
+
+.ui-btn:hover {
+	background:#7cdac8 !important;
+	color:#fff !important;
+	text-shadow:none !important;
+	
+}
+
+.ui-header .ui-btn{
+	
+	position:absolute;
+	background:none !important;
+	border:0px;
+	box-shadow:none;
+	margin:0px;
+	padding:0px;
+}
+
+.ui-header span{
+	text-shadow:none;
+	font-size:32px;
+	color:#fff;
+}
+
+p {
+
+color:#ff;
+font-size:12px;
+text-shadow:none;
+text-emphasis:none;
+text-decoration:none;
+font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+padding:20px;
+
+}
+
+
+.ui-footer{
+color:#ffffff;
+text-shadow:none;
+text-emphasis:none;
+font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+font-size: 16px;
+font-weight
+line-height: 20px; 
+margin:  0px 0px !important;
+background:#3bc0a7 !important;
+border:none;
+padding-left:18px;
+padding-top:8px;
+padding-bottom:8px;
+padding-right:1px;
+}
+
+.ui-footer .ui-btn{
+	border-color:#FFFFFF !important;
+	background:none !important;
+	box-shadow:none;
+	text-shadow:none !important;
+	width:73px !important;
+}
+
+.ui-footer .ui-btn:hover{
+	background:#7cdac8 !important;
+	color:#fff !important;
+	text-shadow:none !important;
+}
+	
+
+
+
+
 /* Map Styles */
 #map {
 width: 500px;
@@ -40,18 +139,3 @@ td {
     padding: 0;
     border: none;
 }
-
-textarea {
-    background: rgba(0, 0, 0, 0);  
-    resize: none;
-    padding: 3px;
-    border-style: none;
-}
-
-.review {
-    font-size: 85%;
-    height: 10px;
-    width: 70%;
-    color: black;
-}
-
