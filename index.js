@@ -61,6 +61,18 @@ app.get('/login', function(request, response) {
   response.render('login.jade');
 });
 
+app.get('/joannedoe', function(request, response) {
+  response.render('joannedoe.jade');
+});
+
+app.get('/alexmulligan', function(request, response) {
+  response.render('alexmulligan.jade');
+});
+
+app.get('/johnharvard', function(request, response) {
+  response.render('johnharvard.jade');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
