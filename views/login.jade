@@ -16,7 +16,7 @@ block content
     label(for="age") Age:
     input(type="number", name="age", id="age")
     label(for="gender")
-    select(name="gender")
+    select(name="gender", id="gender")
       option(value=" ") Gender
       option(value="Male") Male
       option(value="Female") Female
@@ -32,3 +32,5 @@ block content
     label(for="password") Password:
     input(type="password", name="password", value="")
     input(type="submit", value="Signup")
+
+block after-scripts
