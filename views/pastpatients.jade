@@ -1,1 +1,29 @@
-include pastpatients.html
+extends clinic_layout
+
+block content
+    div(data-role="header")
+        h1 Past Patients
+        
+    table
+        tr
+            th Name
+            th Time
+            th Reason
+            th Insurance
+            
+        tr
+            td Giacomo Guilzzino
+            td 7:30pm
+            td Headache
+            td Aetna
+        tr
+            td Tyra Wilson
+            td 1:30pm
+            td Leg Injury
+            td MassHealth
+            
+        tr
+            td Sudeep Chang
+            td 1:30pm
+            td Fever
+            td No Insurance
