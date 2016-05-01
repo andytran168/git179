@@ -24,6 +24,11 @@ function showPostion(pos) {
       content: document.getElementById('info-content')
 
   });
+  var myLatLng = new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude)
+    var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+  });
   var Cambridge = new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude)
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
@@ -58,6 +63,8 @@ function callback(results, status) {
     }
   }
 }
+
+
   autocomplete = new google.maps.places.Autocomplete(
                   (
           document.getElementById('autocomplete')), {
