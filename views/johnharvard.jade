@@ -1,1 +1,34 @@
-include johnharvard.html
+extends clinic_layout
+block content
+  div(data-role="header")
+    h1(id="name") John Harvard
+    a(data-role="button", href="/incomingpatients", data-icon="back", data-corners="false", data-iconpos="notext") Back
+      
+  div(id="user-img")
+    img(src="img/ph.png",alt="User Image")
+    
+  div(data-role="collapsible", data-corners="false", class="ui-corner-none")
+    h2(class="ui-collapsible-heading ui-collapsible-heading-collapsed")
+      a(class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-up-d" href="#" data-corners="false" data-shadow="false" data-iconshadow="true" data-icon="plus" data-iconpos="left" data-theme="d")
+        span(class="ui-btn-text") Patient Profile
+    
+    div(class="ui-body ui-body-d ui-textalign-left")
+      div(class="tablerow")
+        div(class="left-table") Age:
+        div(class="right-table", id="age") 380
+      div(class="tablerow")
+        div(class="left-table") Gender:
+        div(class="right-table", id="gender") Male
+      div(class="tablerow")
+        div(class="left-table") Location:
+        div(class="right-table", id="location") Boston, MA
+      
+  div(data-role="collapsible", data-corners="false", class="ui-corner-none")
+    h2(class="ui-collapsible-heading ui-collapsible-heading-collapsed")
+      a(class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-up-d", href="#", data-corners="false", data-shadow="false", data-iconshadow="true", data-icon="plus", data-iconpos="left", data-theme="d")
+        span(class="ui-btn-next") Insurance Information
+    div(class="ui-body ui-body-d ui-textalign-left")
+      div(class="tablerow")
+        div(class="left-table") Insurance:
+        div(class="right-table", id="insurance") Blue Cross Blue Shield of Massachusetts
+
